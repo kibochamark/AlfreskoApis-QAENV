@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "tsc",
-    "start": "pm2 start ecosystem.config.js",
+    "start": "nodemon",
     "dev": "nodemon"
   },
   "dependencies": {

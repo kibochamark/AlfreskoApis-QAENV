@@ -32,7 +32,7 @@ import * as schema from "../db/schema"
 // import { Pool } from "pg";
 
 const pool = new Pool({
-  connectionString: "postgresql://neondb_owner:30WYKdxVMhnQ@ep-rapid-snow-a26ly6wq-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require",
+  connectionString: process.env.DATABASE_URL!,
 });
 
 // or
