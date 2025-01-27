@@ -1,9 +1,45 @@
 {
-  "id": "76afb16a-aa8d-4365-be6e-473cc510290b",
+  "id": "e75d981a-e112-4682-8530-8c6fd2333bac",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.configsettings": {
+      "name": "configsettings",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "pricetoggle": {
+          "name": "pricetoggle",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "public.categories": {
       "name": "categories",
       "schema": "",
@@ -718,12 +754,12 @@
           "primaryKey": false,
           "notNull": false
         },
-        "quotestatus": {
-          "name": "quotestatus",
-          "type": "quotestatus",
+        "status": {
+          "name": "status",
+          "type": "status",
           "typeSchema": "public",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "additionalfeatures": {
           "name": "additionalfeatures",
@@ -750,6 +786,26 @@
           "primaryKey": false,
           "notNull": false,
           "default": "now()"
+        },
+        "price": {
+          "name": "price",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "roofBlinds": {
+          "name": "roofBlinds",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "budget": {
+          "name": "budget",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
         }
       },
       "indexes": {},
@@ -1234,6 +1290,24 @@
         "individual",
         "company",
         "admin"
+      ]
+    },
+    "public.status": {
+      "name": "status",
+      "schema": "public",
+      "values": [
+        "contacted",
+        "left message",
+        "survey booked",
+        "survey completed",
+        "revised estimate sent",
+        "sale agreed",
+        "invoiced",
+        "payment received",
+        "ordered",
+        "installed",
+        "complete",
+        "pending"
       ]
     },
     "public.subscriptions_status": {

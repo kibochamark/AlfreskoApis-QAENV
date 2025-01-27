@@ -11,10 +11,23 @@ EXCEPTION
 END $$;
 --> statement-breakpoint
 DO $$ BEGIN
+ CREATE TYPE "public"."status" AS ENUM('contacted', 'left message', 'survey booked', 'survey completed', 'revised estimate sent', 'sale agreed', 'invoiced', 'payment received', 'ordered', 'installed', 'complete', 'pending');
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
+DO $$ BEGIN
  CREATE TYPE "public"."subscriptions_status" AS ENUM('active', 'inactive');
 EXCEPTION
  WHEN duplicate_object THEN null;
 END $$;
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "configsettings" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"pricetoggle" boolean,
+	"created_at" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now()
+);
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "categories" (
 	"id" serial PRIMARY KEY NOT NULL,
@@ -125,11 +138,14 @@ CREATE TABLE IF NOT EXISTS "quote" (
 	"rooffeature" text,
 	"wallfeatures" jsonb NOT NULL,
 	"backside" text,
-	"quotestatus" "quotestatus",
+	"status" "status" NOT NULL,
 	"additionalfeatures" text,
 	"installation" boolean,
 	"created_at" timestamp DEFAULT now(),
-	"updated_at" timestamp DEFAULT now()
+	"updated_at" timestamp DEFAULT now(),
+	"price" numeric DEFAULT 0 NOT NULL,
+	"roofBlinds" varchar,
+	"budget" numeric DEFAULT 0 NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "refresh_tokens" (
