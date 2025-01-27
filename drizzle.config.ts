@@ -6,6 +6,6 @@ export default defineConfig({
   out: "./drizzle",
   dialect: "postgresql",
   dbCredentials: {
-    url: "postgresql://neondb_owner:30WYKdxVMhnQ@ep-rapid-snow-a26ly6wq-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require",
+    url: "postgresql://neondb_owner:npg_kzBLcCPDIl96@ep-delicate-glitter-a8lmlqrw-pooler.eastus2.azure.neon.tech/Alfresko-test-db?sslmode=require",
   },
 });
