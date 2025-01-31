@@ -37,7 +37,7 @@ const sendEmail = async (email: string, token: string) => {
 
 export const sendQuoteNotification = async (adminEmail: string, quoteDetails: any) => {
     const logoUrl = url + 'logo.jpg';; // Replace with your logo URL
-    const { name, email, phone, address, dimensions,  canopyType, rooffeature, additionalfeatures, budget } = quoteDetails;
+    const { name, email, phone, address, dimensions,  canopyType, rooffeature, timeframe, additionalfeatures, budget } = quoteDetails;
 
 
 
@@ -60,6 +60,7 @@ export const sendQuoteNotification = async (adminEmail: string, quoteDetails: an
         <li style="background: #fff; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"><strong>Dimensions:</strong> ${dimensions}</li>
         <li style="background: #fff; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"><strong>Canopy Type:</strong> ${canopyType}</li>
         <li style="background: #fff; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"><strong>Roof Material:</strong> ${rooffeature}</li>
+        <li style="background: #fff; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"><strong>Roof Material:</strong> ${timeframe}</li>
         <li style="background: #fff; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"><strong>Additional Features:</strong> ${additionalfeatures}</li>
         <li style="background: #fff; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"><strong>Budget:</strong>${formattedBudget}</li>
     </ul>
@@ -84,7 +85,7 @@ export const sendQuoteNotification = async (adminEmail: string, quoteDetails: an
 
 export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDetails: any) => {
     const logoUrl = url + 'logo.jpg'; // Replace with your logo URL
-    const { name, email, phone, address, dimensions, price, canopyType, rooffeature, additionalfeatures, budget, wallfeatures } = quoteDetails;
+    const { name, email, phone, address, dimensions, price, canopyType, rooffeature, timeframe, additionalfeatures, budget, wallfeatures } = quoteDetails;
 
     const wallFeaturesList = wallfeatures.map(
         (feature: { name: string; description: string }) => `<li><strong>${feature.name}:</strong> ${feature.description}</li>`
@@ -113,6 +114,7 @@ export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDet
                 <p><strong>Dimensions:</strong> Perfectly tailored at ${dimensions}</p>
                 <p><strong>Canopy Type:</strong> ${canopyType}</p>
                 <p><strong>Roof Material:</strong> ${rooffeature}</p>
+                <p><strong>Roof Material:</strong> ${timeframe}</p>
                 <p><strong>Extra Touches:</strong> ${additionalfeatures}</p>
                 <p><strong>Budget:</strong>${formattedBudget}</p>
                 <h3>🏠 Wall Features</h3>

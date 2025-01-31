@@ -20,6 +20,7 @@ const createQuoteSchema = Joi.object({
     price: Joi.number().required(),
     canopyType: Joi.string().required(),
     rooffeature: Joi.string().required(),
+    timeframe: Joi.string().required(),
     roofBlinds: Joi.string().optional(),
     budget: Joi.number().required(),
     wallfeatures: Joi.array().items(
@@ -56,6 +57,7 @@ const updateQuoteSchema = Joi.object({
     dimensions: Joi.string().required(),
     canopyType: Joi.string().required(),
     rooffeature: Joi.string().required(),
+    timeframe: Joi.string().required(),
     roofBlinds: Joi.string().optional(),
     budget: Joi.number().required(),
     wallfeatures: Joi.array().items(
@@ -238,6 +240,7 @@ export const updatequote = async (req: Request, res: Response) => {
             dimensions,
             canopyType,
             rooffeature,
+            timeframe,
             wallfeatures,
             price,
             status,
@@ -260,6 +263,7 @@ export const updatequote = async (req: Request, res: Response) => {
             budget,
             roofBlinds,
             rooffeature,
+            timeframe,
             wallfeatures,
             backside,
             status,

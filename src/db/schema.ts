@@ -149,6 +149,7 @@ export const quote = pgTable("quote", {
     dimensions: text("dimensions").notNull(),
     canopyType: varchar("canopyType").notNull(),
     rooffeature: text("rooffeature"),
+    timeframe: text("timeframe"),
     wallfeatures: jsonb("wallfeatures").notNull(), // Ensure the name is "wallfeatures" (plural)
     backside: text("backside"),
     status: quoteStatusEnum("status").notNull(),
