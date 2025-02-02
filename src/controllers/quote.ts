@@ -203,7 +203,7 @@ export const newquote = async (req: Request, res: Response) => {
         
         // // Send OTP code to user's email
         // await sendQuoteNotification("info@alfresko.co.uk", createdquote[0]);
-        // await sendQuoteNotificationToClient(createdquote[0]?.email as string, createdquote[0]);
+        await sendQuoteNotificationToClient(createdquote[0]?.email as string, createdquote[0]);
 
         return res.status(201).json({
             message: "success",
