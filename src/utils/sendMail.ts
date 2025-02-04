@@ -114,7 +114,7 @@ export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDet
                 <p><strong>Dimensions:</strong> Perfectly tailored at ${dimensions}</p>
                 <p><strong>Canopy Type:</strong> ${canopyType}</p>
                 <p><strong>Roof Material:</strong> ${rooffeature}</p>
-                <p><strong>Roof Material:</strong> ${timeframe}</p>
+                <p><strong>Time Frame:</strong> ${timeframe}</p>
                 <p><strong>Extra Touches:</strong> ${additionalfeatures}</p>
                 <p><strong>Budget:</strong>${formattedBudget}</p>
                 <h3>🏠 Wall Features</h3>
