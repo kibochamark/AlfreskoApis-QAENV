@@ -119,7 +119,10 @@ export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDet
                 <p><strong>Budget:</strong>${formattedBudget}</p>
                 <h3>🏠 Wall Features</h3>
                 <ul>${wallFeaturesList}</ul>
-                <ul><strong>Wall 4:</strong>${backside}</ul>
+
+                <h3>🏠 Backside</h3>
+                <ul><li>${backside}</li></ul>
+                </br/>
                 <p><strong>💰 Your Quote Price:</strong>${formattedPrice}</p>
                 <h3>💡 What Happens Next?</h3>
                 <p>This is just the beginning of creating your ideal canopy. If you’d like to tweak any details or add more features, simply hit "Reply," and we’ll update your quote.</p>
@@ -130,8 +133,9 @@ export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDet
                     <li><strong>Attention to Detail:</strong> From sleek designs to thoughtful touches, we’ve got you covered.</li>
                     <li><strong>Customer Delight:</strong> Your happiness fuels our passion!</li>
                 </ul>
+                <p><strong>This is not an offer of contract, a personalised estimate will be issued subject to survey</strong></p>
+                <br/>
                 <h3>📞 Contact Us</h3>
-                <p>This is not an offer of contract, a personalised estimate will be issued subject to survey</p>
                 <p>Feel free to reach out anytime.</p>
                 <p>8, Willow Park, Langley Park, Durham DH7 9FF</p>
                 <p>Email: <a href="mailto:info@alfresko.co.uk">info@alfresko.co.uk</a> | Phone: 07743896460</p>
