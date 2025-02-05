@@ -85,7 +85,7 @@ export const sendQuoteNotification = async (adminEmail: string, quoteDetails: an
 
 export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDetails: any) => {
     const logoUrl = url + 'logo.jpg'; // Replace with your logo URL
-    const { name, email, phone, address, dimensions, price, canopyType, rooffeature, timeframe, additionalfeatures, budget, wallfeatures } = quoteDetails;
+    const { name, email, phone, address, dimensions, price, canopyType, rooffeature, timeframe, additionalfeatures, budget, wallfeatures, backside } = quoteDetails;
 
     const wallFeaturesList = wallfeatures.map(
         (feature: { name: string; description: string }) => `<li><strong>${feature.name}:</strong> ${feature.description}</li>`
@@ -119,6 +119,7 @@ export const sendQuoteNotificationToClient = async (adminEmail: string, quoteDet
                 <p><strong>Budget:</strong>${formattedBudget}</p>
                 <h3>🏠 Wall Features</h3>
                 <ul>${wallFeaturesList}</ul>
+                <ul><strong>Wall 4:</strong>${backside}</ul>
                 <p><strong>💰 Your Quote Price:</strong>${formattedPrice}</p>
                 <h3>💡 What Happens Next?</h3>
                 <p>This is just the beginning of creating your ideal canopy. If you’d like to tweak any details or add more features, simply hit "Reply," and we’ll update your quote.</p>
